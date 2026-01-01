@@ -1,0 +1,518 @@
+/* 
+  Ojà'yà Landing Page Styles (No custom JS)
+  - Uses Bootstrap 5 + custom CSS (variables, animations)
+  - CSS-only for natural animations and on-load reveals
+  - AOS library for scroll animations
+*/
+
+:root {
+    --green: #1A6A1F;
+    --dark-green: #0f3d13;
+    --gold: #E0B100;
+    --beige: #F5F1E6;
+    --white: #FFFFFF;
+    --sage: #EAF5EA;
+    --light-green: #e8f5e9;
+    --cream: #fffbf0;
+
+    --text: #222222;
+    --muted: #6c757d;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text);
+    background: var(--white);
+    font-feature-settings: "liga" 1, "calt" 1;
+}
+
+/* Accessibility helpers */
+.visually-hidden-focusable:active,
+.visually-hidden-focusable:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
+/* Brand accent */
+.brand-text {
+    color: var(--green);
+    letter-spacing: 0.3px;
+}
+
+/* Utility */
+.text-ojaya {
+    color: var(--green) !important;
+}
+
+.bg-beige {
+    background: var(--beige);
+}
+
+.overline {
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+/* Buttons */
+.btn-ojaya {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--green);
+    --bs-btn-border-color: var(--green);
+    --bs-btn-hover-bg: #145218;
+    --bs-btn-hover-border-color: #145218;
+    --bs-btn-focus-shadow-rgb: 26, 106, 31;
+    transform: translateZ(0);
+    transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+    box-shadow: 0 6px 16px rgba(26, 106, 31, 0.25);
+    background-image: linear-gradient(135deg, var(--green), #238a2a);
+}
+
+.btn-ojaya:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 10px 24px rgba(26, 106, 31, 0.28);
+}
+
+.btn-outline-ojaya {
+    --bs-btn-color: var(--green);
+    --bs-btn-border-color: var(--green);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--green);
+    --bs-btn-hover-border-color: var(--green);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.btn-outline-ojaya:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(26, 106, 31, .18);
+}
+
+.btn-gold {
+    --bs-btn-color: #1a1a1a;
+    --bs-btn-bg: var(--gold);
+    --bs-btn-border-color: var(--gold);
+    --bs-btn-hover-bg: #f0c200;
+    --bs-btn-hover-border-color: #f0c200;
+    transition: transform .2s ease, box-shadow .2s ease;
+    box-shadow: 0 6px 16px rgba(224, 177, 0, 0.25);
+}
+
+.btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(224, 177, 0, 0.28);
+}
+
+/* Navbar - Sticky with color change on scroll */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+.navbar {
+    background-color: var(--dark-green) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--green);
+    box-shadow: 0 4px 12px rgba(15, 61, 19, 0.3) !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    padding: 1rem 0;
+}
+
+/* Scrolled navbar - white background */
+.navbar.scrolled {
+    background-color: var(--white) !important;
+    border-bottom: 2px solid rgba(26, 106, 31, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.navbar .navbar-brand .brand-text {
+    color: var(--gold) !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar.scrolled .navbar-brand .brand-text {
+    color: var(--green) !important;
+    text-shadow: none;
+}
+
+.navbar .nav-link {
+    color: rgba(255,255,255,0.95) !important;
+    font-weight: 500;
+    font-size: 1.05rem;
+    transition: color .3s ease, transform .2s ease, text-shadow .2s ease;
+}
+
+.navbar.scrolled .nav-link {
+    color: var(--text) !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--gold) !important;
+    transform: translateY(-2px);
+    text-shadow: 0 2px 4px rgba(224, 177, 0, 0.3);
+}
+
+.navbar.scrolled .nav-link:hover,
+.navbar.scrolled .nav-link.active {
+    color: var(--green) !important;
+    text-shadow: none;
+}
+
+.navbar-toggler {
+    border-color: rgba(255,255,255,0.3);
+}
+
+.navbar.scrolled .navbar-toggler {
+    border-color: rgba(26, 106, 31, 0.3);
+}
+
+.navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+.navbar.scrolled .navbar-toggler-icon {
+    filter: none;
+}
+
+/* Increase button size in navbar */
+.navbar .btn-sm {
+    padding: 0.5rem 1.25rem;
+    font-size: 1rem;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(180deg, #fff 0%, #fff 60%, var(--beige) 100%);
+}
+
+/* Hero with background image and overlay */
+.hero-image {
+    min-height: 72vh;
+    background: url('assets/hero.jpg') center/cover no-repeat;
+}
+.hero-image .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,.45), rgba(0,0,0,.25));
+}
+
+.hero .hero-art {
+    width: min(520px, 100%);
+    aspect-ratio: 1 / 1;
+    color: var(--green);
+}
+
+.hero .sprout {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Sprouting plant */
+.sprout-stem {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: sproutDraw 2.2s ease forwards .2s;
+}
+
+.sprout-leaf {
+    opacity: 0;
+    transform-origin: center;
+    transform: scale(.8) translateY(8px);
+    animation: leafPop .8s cubic-bezier(.2, .65, .3, 1) forwards 1.8s;
+}
+
+@keyframes sproutDraw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes leafPop {
+    from {
+        opacity: 0;
+        transform: scale(.8) translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Floating leaves */
+.floating-leaves {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.leaf {
+    position: absolute;
+    width: 56px;
+    height: 28px;
+    fill: #2ea736;
+    opacity: .75;
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, .12));
+    animation: floatY 6s ease-in-out infinite, floatSide 12s linear infinite;
+}
+
+.leaf-1 {
+    top: 10%;
+    left: 10%;
+    animation-delay: .2s, 0s;
+}
+
+.leaf-2 {
+    top: 20%;
+    right: 15%;
+    animation-delay: .6s, 1s;
+}
+
+.leaf-3 {
+    bottom: 15%;
+    left: 20%;
+    animation-delay: 1s, 2s;
+}
+
+.leaf-4 {
+    bottom: 10%;
+    right: 25%;
+    animation-delay: 1.2s, 3s;
+}
+
+@keyframes floatY {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-14px) rotate(8deg);
+    }
+}
+
+@keyframes floatSide {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(16px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Soft background blob */
+.hero-bg-shape {
+    position: absolute;
+    inset: auto -10% -10% -10%;
+    height: 40%;
+    background: radial-gradient(60% 60% at 50% 0%, var(--beige), transparent 65%);
+    z-index: -1;
+}
+
+/* Alternating background helpers with distinct colors */
+.bg-sage { background: var(--sage); }
+.bg-light-green { background: var(--light-green); }
+.bg-cream { background: var(--cream); }
+.section-sage { background: var(--sage); }
+.section-beige { background: var(--beige); }
+.section-light-green { background: var(--light-green); }
+.section-cream { background: var(--cream); }
+
+/* Feature & Why cards */
+.feature-card,
+.why-card {
+    border-radius: 16px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.feature-card:hover,
+.why-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, .08);
+}
+
+.icon-wrap i {
+    color: var(--green);
+}
+
+/* Review card */
+.review-card {
+    max-width: 760px;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 32px;
+    text-align: center;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .06);
+}
+
+/* CTA Join Section */
+.cta-join {
+    background: linear-gradient(135deg, var(--green), #238a2a, #2dbd3a);
+    position: relative;
+}
+
+.cta-join::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(60% 60% at 50% 40%, rgba(255, 255, 255, .08), transparent 70%);
+    pointer-events: none;
+}
+
+/* Footer */
+.footer {
+    background: #0f2c12;
+}
+
+.footer .hover-white:hover {
+    color: #fff !important;
+}
+
+.footer .border-white-25 {
+    border-color: rgba(255, 255, 255, .25) !important;
+}
+
+/* On-load reveal (CSS-only; not scroll-based) */
+.reveal-load {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: revealUp .8s cubic-bezier(.2, .65, .3, 1) forwards;
+}
+
+.reveal-load[style*="--delay"] {
+    animation-delay: var(--delay);
+}
+
+@keyframes revealUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .sprout-stem,
+    .sprout-leaf,
+    .leaf,
+    .reveal-load {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* Card lift effects: apply to generic cards and portals */
+.card,
+.portal-card,
+.review-card {
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: transform .25s cubic-bezier(.2, .65, .3, 1), box-shadow .25s cubic-bezier(.2, .65, .3, 1);
+    will-change: transform, box-shadow;
+}
+.img{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    min-height: 72vh;
+}
+
+.card:hover,
+.portal-card:hover,
+.review-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, .12);
+    animation: pulse-shadow 1.5s ease-in-out infinite;
+}
+
+/* Pulse shadow animation for hovered cards */
+@keyframes pulse-shadow {
+    0%, 100% {
+        box-shadow: 0 16px 32px rgba(0, 0, 0, .12);
+    }
+    50% {
+        box-shadow: 0 20px 40px rgba(26, 106, 31, .15);
+    }
+}
+
+/* Animated underline for CTAs */
+.btn-ojaya,
+.btn-gold {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-ojaya::before,
+.btn-gold::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: rgba(255,255,255,0.5);
+    transition: left 0.3s ease;
+
+}
+
+.btn-ojaya:hover::before,
+.btn-gold:hover::before {
+    left: 100%;
+}
+
+/* Icon float animation */
+@keyframes float-icon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.icon-wrap i {
+    animation: float-icon 3s ease-in-out infinite;
+}
+
+.icon-wrap:hover i {
+    animation-play-state: paused;
+    transform: scale(1.1);
+}
+
+/* Responsive tweaks */
+@media (max-width: 991.98px) {
+    .hero .display-5 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .btn {
+        font-size: 0.95rem;
+    }
+}
+

@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQs — FarmKonnect</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg" aria-label="Primary">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <img src="assets/logo.png" alt="FarmKonnect logo" width="36" height="36" class="rounded-circle object-fit-cover" />
+          <span class="fw-bold brand-text">FarmKonnect</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNav" aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="primaryNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="produce.html">Produce</a></li>
+            <li class="nav-item"><a class="nav-link" href="features.html">Features</a></li>
+            <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="faqs.html">FAQs</a></li>
+            <li class="nav-item ms-lg-3 me-2"><a class="btn btn-ojaya btn-sm" href="signup.html">Get Started</a></li>
+            <li class="nav-item"><a class="btn btn-outline-ojaya btn-sm" href="login.html">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero hero-image position-relative text-white">
+      <div class="hero-overlay"></div>
+      <div class="container py-5 position-relative">
+        <h1 class="display-5 fw-bold">Frequently Asked Questions</h1>
+        <p class="lead">All the details, in one place.</p>
+      </div>
+    </section>
+
+    <section class="py-5 section-light-green">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="accordion" id="faqAccordion" data-aos="fade-up">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="faqOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOneCollapse" aria-expanded="true" aria-controls="faqOneCollapse">
+                    How does Ojà’yà ensure freshness?
+                  </button>
+                </h2>
+                <div id="faqOneCollapse" class="accordion-collapse collapse show" aria-labelledby="faqOne" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body" style="font-size: 15px; color:green;">We source directly from verified local farmers and optimize delivery routes so produce reaches you quickly and safely.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="faqTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwoCollapse" aria-expanded="false" aria-controls="faqTwoCollapse">
+                    Are prices fair for farmers?
+                  </button>
+                </h2>
+                <div id="faqTwoCollapse" class="accordion-collapse collapse " aria-labelledby="faqTwo" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body" style="font-size: 15px; color: green;">Yes. By reducing intermediaries, we ensure transparent, fair pricing that benefits both farmers and consumers.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="faqThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThreeCollapse" aria-expanded="false" aria-controls="faqThreeCollapse">
+                    How do I become a seller on Ojà’yà?
+                  </button>
+                </h2>
+                <div id="faqThreeCollapse" class="accordion-collapse collapse" aria-labelledby="faqThree" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body" style="font-size: 15px; color:green;">Sign up as a Farmer on the Get Started page, verify your profile, and list your produce. Our team can help you onboard.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="faqFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFourCollapse" aria-expanded="false" aria-controls="faqFourCollapse">
+                    Do you deliver to my area?
+                  </button>
+                </h2>
+                <div id="faqFourCollapse" class="accordion-collapse collapse" aria-labelledby="faqFour" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body" style="font-size: 15px; color:green;">We’re expanding quickly. Enter your address at checkout to see delivery options, or contact support.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="faqFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFiveCollapse" aria-expanded="false" aria-controls="faqFiveCollapse">
+                    Can I track my order?
+                  </button>
+                </h2>
+                <div id="faqFiveCollapse" class="accordion-collapse collapse" aria-labelledby="faqFive" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body" style="font-size: 15px; color:green;">Yes. You’ll receive updates via email/SMS. Real-time tracking is rolling out in select locations.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="faqSix">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSixCollapse" aria-expanded="false" aria-controls="faqSixCollapse">
+                    What payment methods are supported?
+                  </button>
+                </h2>
+                <div id="faqSixCollapse" class="accordion-collapse collapse" aria-labelledby="faqSix" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body" style="font-size: 15px; color:green;">We accept major cards, bank transfers, and selected wallets. Cash on delivery is available in limited regions.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer text-white">
+    <div class="container py-5">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <img src="assets/logo.png" alt="FarmKonnect logo" width="32" height="32" class="rounded-circle object-fit-cover" />
+            <span class="fw-bold">FarmKonnect</span>
+          </div>
+          <p class="small mb-3">A living, breathing marketplace where farmers meet consumers through technology.</p>
+          <div class="d-flex gap-3">
+            <a class="text-white-50 hover-white" href="#" aria-label="Instagram"><i class="bi bi-instagram fs-4"></i></a>
+            <a class="text-white-50 hover-white" href="#" aria-label="Whatsapp"><i class="bi bi-whatsapp fs-4"></i></a>
+            <a class="text-white-50 hover-white" href="#" aria-label="Facebook"><i class="bi bi-facebook fs-4"></i></a>
+            <a class="text-white-50 hover-white" href="#" aria-label="LinkedIn"><i class="bi bi-linkedin fs-4"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="fw-semibold mb-3">Company</h6>
+          <ul class="list-unstyled small">
+            <li><a class="text-white-50 hover-white" href="about.html">About</a></li>
+            <li><a class="text-white-50 hover-white" href="features.html">Features</a></li>
+            <li><a class="text-white-50 hover-white" href="reviews.html">Reviews</a></li>
+            <li><a class="text-white-50 hover-white" href="faqs.html">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="fw-semibold mb-3">Resources</h6>
+          <ul class="list-unstyled small">
+            <li><a class="text-white-50 hover-white" href="#">Blog</a></li>
+            <li><a class="text-white-50 hover-white" href="#">Help Center</a></li>
+            <li><a class="text-white-50 hover-white" href="#">Guidelines</a></li>
+            <li><a class="text-white-50 hover-white" href="#">Community</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h6 class="fw-semibold mb-3">Newsletter</h6>
+          <form class="d-flex gap-2">
+            <label for="newsletterEmail" class="visually-hidden">Email</label>
+            <input id="newsletterEmail" type="email" class="form-control" placeholder="you@example.com" required />
+            <button type="submit" class="btn btn-gold">Subscribe</button>
+          </form>
+          <p class="small text-white-50 mt-2">We respect your privacy.</p>
+        </div>
+      </div>
+      <hr class="border-white-25 my-4" />
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small text-white-50">
+        <p class="mb-2 mb-md-0">© FarmKonnect 2025. All rights reserved.</p>
+        <div class="d-flex gap-3">
+          <a class="text-white-50 hover-white" href="#">Terms</a>
+          <a class="text-white-50 hover-white" href="#">Privacy</a>
+          <a class="text-white-50 hover-white" href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  
+  <!-- Navbar scroll effect -->
+  <script>
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100,
+      easing: 'ease-out-cubic'
+    });
+  </script>
+</body>
+</html>

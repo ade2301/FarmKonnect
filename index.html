@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FarmKonnect — Farmers meet Consumers</title>
+    <meta name="description"
+        content="FarmKonnect connects local farmers to consumers — a warm, natural marketplace experience." />
+
+    <!-- Favicon (replace with your logo in /assets) -->
+    <link rel="icon" href="assets/favicon.ico" />
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Site styles -->
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!-- Accessible skip link -->
+    <a class="skip-link visually-hidden-focusable" href="#mainContent">Skip to content</a>
+
+    <!-- Header with responsive Bootstrap Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg" aria-label="Primary">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                    <!-- Optional brand logo -->
+                    <img src="/img/logo.png" alt="FarmKonnect logo" width="36" height="36"
+                        class="d-inline-block align-text-top rounded-circle object-fit-cover" />
+                    <span class="fw-bold brand-text">FarmKonnect</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNav"
+                    aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="primaryNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="produce.html">Produce</a></li>
+                        <li class="nav-item"><a class="nav-link" href="features.html">Features</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
+                        <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
+                        <li class="nav-item ms-lg-3 me-2">
+                            <a class="btn btn-ojaya btn-sm" href="signup.html">Get Started</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-outline-ojaya btn-sm" href="login.html">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="mainContent">
+        <!-- Hero: image background with overlay text and CTAs -->
+        <section id="home" class="hero hero-image position-relative overflow-hidden text-white">
+            <div class="hero-overlay"><img class="img" src="/img/360_F_717382474_GmO4nPQ9mp5j8oYpOjrrdSDN0ycd26F8.jpg" alt=""></div>
+            <div class="container py-5 position-relative">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-8 col-xl-7">
+                        <h1 class="display-5 fw-bold lh-sm mb-3 reveal-load">
+                            Bringing fresh farms to your table — naturally.
+                        </h1>
+                        <p class="lead mb-4 reveal-load" style="--delay:120ms;">
+                            FarmKonnect connects local farmers with consumers for quality produce at fair prices.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3 reveal-load" style="--delay:220ms;">
+                            <a href="signup.html" class="btn btn-ojaya btn-lg" aria-label="Get started on FarmKonnect">Get Started</a>
+                            <a href="about.html" class="btn btn-gold btn-lg" aria-label="Learn more about FarmKonnect">Learn More</a>
+                            <a href="login.html" class="btn btn-ojaya btn-lg" aria-label="Login to FarmKonnect">Login</a>
+                        </div>
+                        <div class="mt-4 text-white-75 reveal-load" style="--delay:320ms;">
+                            Trusted by local communities and smallholder farmers ac ross the region.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slogan: simple CSS reveal (no JS) -->
+        <section id="slogan" class="py-5 section-cream text-center">
+            <div class="container">
+                <p class="overline text-uppercase fw-semibold text-ojaya mb-2" data-aos="fade-down">Our Slogan</p>
+                <h2 class="display-6 fw-bold mb-3" data-aos="fade-up" data-aos-delay="100">Fresh. Fair. From nearby farms to your home.</h2>
+                <p class="text-secondary mx-auto" style="max-width: 720px;" data-aos="fade-up" data-aos-delay="200">We believe in transparent pricing, thriving
+                    local agriculture, and a marketplace that feels warm and human.</p>
+            </div>
+        </section>
+
+        <!-- Colorful CTA: Join our community (links to dedicated signup page) -->
+        <section id="join" class="cta-join text-center text-white">
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <h3 class="fw-bold mb-2 reveal-load">Join our growing community</h3>
+                        <p class="mb-4 reveal-load" style="--delay:120ms;">Whether you're a farmer or a consumer, FarmKonnect
+                            is your bridge to better food systems.</p>
+                        <div class="d-flex flex-wrap justify-content-center gap-3 reveal-load" style="--delay:200ms;">
+                            <a href="signup.html#consumer" class="btn btn-light btn-lg text-ojaya fw-semibold">Sign up as Consumer</a>
+                            <a href="signup.html#farmer" class="btn btn-outline-light btn-lg fw-semibold">Sign up as Farmer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="py-5 bg-sage">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-6 reveal-load">
+                        <img src="/img/hero.jpg" class="img-fluid rounded-4 shadow-sm"
+                            alt="Local farmer harvesting fresh produce" loading="lazy" />
+                    </div>
+                    <div class="col-lg-6">
+                        <p class="overline text-uppercase fw-semibold text-ojaya mb-2 reveal-load">About FarmKonnect</p>
+                        <h3 class="h1 fw-bold mb-3 reveal-load" style="--delay:120ms;">A marketplace rooted in community
+                            and care</h3>
+                        <p class="text-secondary mb-3 reveal-load" style="--delay:200ms;">We connect smallholder farmers
+                            directly with consumers, reducing waste and ensuring freshness and fair earnings. Our
+                            platform celebrates local diversity and seasonal abundance.</p>
+                        <ul class="list-unstyled mb-4 reveal-load" style="--delay:260ms;">
+                            <li class="d-flex align-items-start gap-2 mb-2"><i
+                                    class="bi bi-check-circle-fill text-ojaya"></i><span>Transparent, fair pricing for
+                                    everyone</span></li>
+                            <li class="d-flex align-items-start gap-2 mb-2"><i
+                                    class="bi bi-check-circle-fill text-ojaya"></i><span>Freshness guaranteed from local
+                                    farms</span></li>
+                            <li class="d-flex align-items-start gap-2"><i
+                                    class="bi bi-check-circle-fill text-ojaya"></i><span>Community-led reviews and
+                                    trust</span></li>
+                        </ul>
+                        <a href="/features.html" class="btn btn-ojaya">Explore Features</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section id="features" class="py-5 bg-beige">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <p class="overline text-uppercase fw-semibold text-ojaya mb-2" data-aos="fade-down">Features</p>
+                    <h3 class="h1 fw-bold" data-aos="fade-up">Simple, transparent, and delightful</h3>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card p-4 h-100" data-aos="zoom-in" data-aos-delay="0">
+                            <div class="icon-wrap mb-3"><i class="bi bi-bag-check-fill"></i></div>
+                            <h5 class="fw-semibold">Direct Ordering</h5>
+                            <p class="text-secondary">Order directly from verified farmers, no middlemen.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card p-4 h-100" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="icon-wrap mb-3"><i class="bi bi-truck"></i></div>
+                            <h5 class="fw-semibold">Reliable Delivery</h5>
+                            <p class="text-secondary">Carefully handled logistics for freshness and safety.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card p-4 h-100" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="icon-wrap mb-3"><i class="bi bi-shield-check"></i></div>
+                            <h5 class="fw-semibold">Verified Farmers</h5>
+                            <p class="text-secondary">Community-vetted profiles and transparent ratings.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="feature-card p-4 h-100" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="icon-wrap mb-3"><i class="bi bi-cash-coin"></i></div>
+                            <h5 class="fw-semibold">Fair Pricing</h5>
+                            <p class="text-secondary">Simple, honest prices that benefit all sides.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Local Produce / What we sell (grid with prices) -->
+        <section id="produce" class="py-5 section-sage">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <p class="overline text-uppercase fw-semibold text-ojaya mb-2" data-aos="fade-down">Local Produce</p>
+                    <h3 class="h1 fw-bold" data-aos="fade-up">Fresh picks at considerate prices</h3>
+                </div>
+                <div class="row g-4">
+                    <!-- Card 1 -->
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card h-100" data-aos="flip-left" data-aos-delay="0">
+                            <img src="assets/produce-tomatoes.jpg" class="card-img-top" alt="Basket of ripe tomatoes"
+                                loading="lazy" />
+                            <div class="card-body">
+                                <h5 class="card-title">Tomatoes</h5>
+                                <p class="text-secondary mb-2">Locally grown, juicy and ripe.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price fw-bold text-ojaya">₦1,200/kg</span>
+                                    <button class="btn btn-outline-ojaya btn-sm">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card h-100" data-aos="flip-left" data-aos-delay="100">
+                            <img src="assets/produce-yam.jpg" class="card-img-top" alt="Fresh yams" loading="lazy" />
+                            <div class="card-body">
+                                <h5 class="card-title">Yam</h5>
+                                <p class="text-secondary mb-2">Rich, starchy, and satisfying.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price fw-bold text-ojaya">₦900/tuber</span>
+                                    <button class="btn btn-outline-ojaya btn-sm">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card h-100" data-aos="flip-left" data-aos-delay="200">
+                            <img src="assets/produce-pepper.jpg" class="card-img-top" alt="Red chili peppers"
+                                loading="lazy" />
+                            <div class="card-body">
+                                <h5 class="card-title">Peppers</h5>
+                                <p class="text-secondary mb-2">A spicy kick, sustainably grown.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price fw-bold text-ojaya">₦1,000/kg</span>
+                                    <button class="btn btn-outline-ojaya btn-sm">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more cards as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section id="why" class="py-5 bg-beige">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <p class="overline text-uppercase fw-semibold text-ojaya mb-2">Why Choose Us</p>
+                    <h3 class="h1 fw-bold">We put people and produce first</h3>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="why-card p-4 h-100 reveal-load">
+                            <i class="bi bi-emoji-smile fs-2 text-ojaya mb-3"></i>
+                            <h6 class="fw-bold">Community-first</h6>
+                            <p class="text-secondary">Built with, and for, local communities.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="why-card p-4 h-100 reveal-load" style="--delay:100ms;">
+                            <i class="bi bi-tree fs-2 text-ojaya mb-3"></i>
+                            <h6 class="fw-bold">Natural & Seasonal</h6>
+                            <p class="text-secondary">We celebrate nature’s rhythms.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="why-card p-4 h-100 reveal-load" style="--delay:200ms;">
+                            <i class="bi bi-people fs-2 text-ojaya mb-3"></i>
+                            <h6 class="fw-bold">Trust & Transparency</h6>
+                            <p class="text-secondary">Profiles, ratings, and clear pricing.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="why-card p-4 h-100 reveal-load" style="--delay:300ms;">
+                            <i class="bi bi-lightning-charge fs-2 text-ojaya mb-3"></i>
+                            <h6 class="fw-bold">Fast Fulfilment</h6>
+                            <p class="text-secondary">From farm to table without delay.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <p class="overline text-uppercase fw-semibold text-ojaya mb-2">Reviews</p>
+                    <h3 class="h1 fw-bold">Loved by farmers and consumers</h3>
+                </div>
+                <div id="reviewsCarousel" class="carousel slide reveal-load" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="review-card mx-auto">
+                                <div class="stars mb-2 text-ojaya" aria-hidden="true">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-half"></i>
+                                </div>
+                                <blockquote class="mb-2">FarmKonnect helped me sell produce faster with better margins. I
+                                    feel seen and supported.</blockquote>
+                                <div class="small text-secondary">— Adebayo, Farmer (Ibadan)</div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="review-card mx-auto">
+                                <div class="stars mb-2 text-ojaya" aria-hidden="true">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i>
+                                </div>
+                                <blockquote class="mb-2">The freshness is unmatched and prices are fair. I love
+                                    supporting local farmers.</blockquote>
+                                <div class="small text-secondary">— Ada, Consumer (Lagos)</div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="review-card mx-auto">
+                                <div class="stars mb-2 text-ojaya" aria-hidden="true">
+                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                        class="bi bi-star"></i>
+                                </div>
+                                <blockquote class="mb-2">Clean design, easy ordering, and on-time delivery. Highly
+                                    recommend FarmKonnect.</blockquote>
+                                <div class="small text-secondary">— Kunle, Consumer (Abuja)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#reviewsCarousel"
+                        data-bs-slide="prev" aria-label="Previous review">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#reviewsCarousel"
+                        data-bs-slide="next" aria-label="Next review">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- How It Works -->
+        <section id="how" class="py-5 bg-beige">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <p class="overline text-uppercase fw-semibold text-ojaya mb-2" data-aos="fade-down">How it works</p>
+                    <h3 class="h1 fw-bold" data-aos="fade-up">From farm to your table in 3 steps</h3>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="feature-card p-4 h-100 text-center" data-aos="fade-up" data-aos-delay="0">
+                            <div class="icon-wrap mb-3"><i class="bi bi-person-plus fs-2"></i></div>
+                            <h6 class="fw-bold">Create your account</h6>
+                            <p class="text-secondary">Sign up as a consumer or farmer in minutes.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card p-4 h-100 text-center" data-aos="fade-up" data-aos-delay="100">
+                            <div class="icon-wrap mb-3"><i class="bi bi-basket fs-2"></i></div>
+                            <h6 class="fw-bold">Shop or list produce</h6>
+                            <p class="text-secondary">Consumers browse fresh produce; farmers list items.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card p-4 h-100 text-center" data-aos="fade-up" data-aos-delay="200">
+                            <div class="icon-wrap mb-3"><i class="bi bi-truck fs-2"></i></div>
+                            <h6 class="fw-bold">Fast fulfilment</h6>
+                            <p class="text-secondary">Pick-up or delivery gets goods to your door quickly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners / Community -->
+        <section id="partners" class="py-5 section-sage">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <p class="overline text-uppercase fw-semibold text-ojaya mb-2" data-aos="fade-down">Our Partners</p>
+                    <h3 class="h1 fw-bold" data-aos="fade-up">Proudly collaborating with communities</h3>
+                </div>
+                <div class="row g-4 align-items-center justify-content-center">
+                    <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="0"><img src="assets/partner1.png" class="img-fluid opacity-75" alt="Partner 1" loading="lazy"></div>
+                    <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100"><img src="assets/partner2.png" class="img-fluid opacity-75" alt="Partner 2" loading="lazy"></div>
+                    <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200"><img src="assets/partner3.png" class="img-fluid opacity-75" alt="Partner 3" loading="lazy"></div>
+                    <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300"><img src="assets/partner4.png" class="img-fluid opacity-75" alt="Partner 4" loading="lazy"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer text-white">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <img src="assets/logo.png" alt="FarmKonnect logo" width="32" height="32"
+                            class="rounded-circle object-fit-cover" />
+                        <span class="fw-bold">FarmKonnect</span>
+                    </div>
+                    <p class="small mb-3">A living, breathing marketplace where farmers meet consumers through
+                        technology.</p>
+                    <div class="d-flex gap-3">
+                        <a class="text-white-50 hover-white" href="#" aria-label="Instagram"><i
+                                class="bi bi-instagram fs-4"></i></a>
+                        <a class="text-white-50 hover-white" href="#" aria-label="Twitter"><i
+                                class="bi bi-whatsapp fs-4"></i></a>
+                        <a class="text-white-50 hover-white" href="#" aria-label="Facebook"><i
+                                class="bi bi-facebook fs-4"></i></a>
+                        <a class="text-white-50 hover-white" href="#" aria-label="LinkedIn"><i
+                                class="bi bi-linkedin fs-4"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="fw-semibold mb-3">Company</h6>
+                    <ul class="list-unstyled small">
+                        <li><a class="text-white-50 hover-white" href="about.html">About</a></li>
+                        <li><a class="text-white-50 hover-white" href="features.html">Features</a></li>
+                        <li><a class="text-white-50 hover-white" href="reviews.html">Reviews</a></li>
+                        <li><a class="text-white-50 hover-white" href="faqs.html">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="fw-semibold mb-3">Resources</h6>
+                    <ul class="list-unstyled small">
+                        <li><a class="text-white-50 hover-white" href="#">Blog</a></li>
+                        <li><a class="text-white-50 hover-white" href="#">Help Center</a></li>
+                        <li><a class="text-white-50 hover-white" href="#">Guidelines</a></li>
+                        <li><a class="text-white-50 hover-white" href="#">Community</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="fw-semibold mb-3">Newsletter</h6>
+                    <form class="d-flex gap-2">
+                        <label for="newsletterEmail" class="visually-hidden">Email</label>
+                        <input id="newsletterEmail" type="email" class="form-control" placeholder="you@example.com"
+                            required />
+                        <button type="submit" class="btn btn-gold">Subscribe</button>
+                    </form>
+                    <p class="small text-white-50 mt-2">We respect your privacy.</p>
+                </div>
+            </div>
+            <hr class="border-white-25 my-4" />
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center small text-white-50">
+                <p class="mb-2 mb-md-0">© <span>FarmKonnect</span> <span id="year">2025</span>. All rights reserved.</p>
+                <div class="d-flex gap-3">
+                    <a class="text-white-50 hover-white" href="/terms.html">Terms</a>
+                    <a class="text-white-50 hover-white" href="#">Privacy</a>
+                    <a class="text-white-50 hover-white" href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle (for navbar collapse, carousel, accordion, tabs if used on other pages) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- Navbar scroll effect -->
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100,
+            easing: 'ease-out-cubic'
+        });
+    </script>
+</body>
+<!-- Bootstrap JS Bundle (for navbar collapse, carousel, accordion, tabs if used on other pages) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</html>
