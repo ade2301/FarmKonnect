@@ -379,7 +379,7 @@
             return null;
         }
 
-        return session;
+        return session;      
     }
 
     async function authenticateUser(options) {

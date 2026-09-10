@@ -44,20 +44,28 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="primaryNav">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 align-items-lg-center home-nav-links">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="produce.html">Produce</a></li>
                         <li class="nav-item"><a class="nav-link" href="features.html">Features</a></li>
                         <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
                         <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
-                        <li class="nav-item ms-lg-3 me-2">
-                            <a class="btn btn-ojaya btn-sm" href="signup.html">Get Started</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="btn btn-outline-ojaya btn-sm" href="login.html">Login</a>
-                        </li>
                     </ul>
+                    <div class="d-flex flex-wrap align-items-center justify-content-center gap-2 home-nav-actions">
+                        <div class="nav-item">
+                            <button type="button" class="btn btn-gold btn-sm cart-badge" data-cart-open title="View cart">
+                                <i class="bi bi-basket2"></i>
+                                <span data-cart-count class="d-none">0</span>
+                            </button>
+                        </div>
+                        <div class="nav-item">
+                            <a class="btn btn-ojaya btn-sm" href="signup.html">Get Started</a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="btn btn-outline-ojaya btn-sm" href="login.html">Login</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -65,21 +73,21 @@
 
     <main id="mainContent">
         <!-- Hero: image background with overlay text and CTAs -->
-        <section id="home" class="hero hero-image position-relative overflow-hidden text-white">
+        <section id="home" class="hero hero-image home-hero position-relative overflow-hidden text-white">
             <div class="hero-overlay"></div>
             <div class="container py-5 position-relative">
-                <div class="row align-items-center g-4">
-                    <div class="col-lg-8 col-xl-7">
-                        <h1 class="display-5 fw-bold lh-sm mb-3 reveal-load">
-                            Bringing fresh farms to your table — naturally.
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-9 col-xl-8">
+                        <h1 class="display-3 fw-bold lh-sm mb-3 reveal-load">
+                            Bringing fresh farms to your table <span class="hero-accent">— naturally.</span>
                         </h1>
-                        <p class="lead mb-4 reveal-load" style="--delay:120ms;">
+                        <p class="lead mb-4 mx-auto reveal-load" style="--delay:120ms;">
                             FarmKonnect connects local farmers with consumers for quality produce at fair prices.
                         </p>
-                        <div class="d-flex flex-wrap gap-3 reveal-load" style="--delay:220ms;">
-                            <a href="signup.html" class="btn btn-ojaya btn-lg" aria-label="Get started on FarmKonnect">Get Started</a>
+                        <div class="d-flex flex-wrap justify-content-center gap-3 reveal-load" style="--delay:220ms;">
+                            <a href="produce.html" class="btn btn-gold btn-lg" aria-label="Start shopping on FarmKonnect"><i class="bi bi-cart3 me-2"></i>Start Shopping</a>
                             <a href="about.html" class="btn btn-gold btn-lg" aria-label="Learn more about FarmKonnect">Learn More</a>
-                            <a href="login.html" class="btn btn-outline-ojaya btn-lg" aria-label="Login to FarmKonnect">Login</a>
+                            <a href="signup.html#farmer" class="btn btn-outline-light btn-lg" aria-label="Join FarmKonnect as a farmer"><i class="bi bi-leaf me-2"></i>Join as a Farmer</a>
                         </div>
                         <div class="mt-4 small text-white-75 reveal-load" style="--delay:320ms;">
                             Trusted by local communities and smallholder farmers across the region.
@@ -197,7 +205,7 @@
                 </div>
                 <div class="row g-4">
                     <!-- Card 1 -->
-                    <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="col-12 col-sm-6 col-lg-4" data-produce-card data-category="Vegetables">
                         <div class="card h-100" data-aos="flip-left" data-aos-delay="0">
                             <img src="assets/produce-tomatoes.jpg" class="card-img-top" alt="Basket of ripe tomatoes"
                                 loading="lazy" />
@@ -206,13 +214,13 @@
                                 <p class="text-secondary mb-2">Locally grown, juicy and ripe.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <span class="price fw-bold text-ojaya">₦1,200/kg</span>
-                                    <button class="btn btn-outline-ojaya btn-sm">Add to Cart</button>
+                                    <button type="button" class="btn btn-outline-ojaya btn-sm" data-product="Tomatoes" data-price="1200" data-unit="kg" data-image="assets/produce-tomatoes.jpg" data-category="Vegetables">Add to Cart</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Card 2 -->
-                    <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="col-12 col-sm-6 col-lg-4" data-produce-card data-category="Tubers">
                         <div class="card h-100" data-aos="flip-left" data-aos-delay="100">
                             <img src="assets/produce-yam.jpg" class="card-img-top" alt="Fresh yams" loading="lazy" />
                             <div class="card-body">
@@ -220,13 +228,13 @@
                                 <p class="text-secondary mb-2">Rich, starchy, and satisfying.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <span class="price fw-bold text-ojaya">₦900/tuber</span>
-                                    <button class="btn btn-outline-ojaya btn-sm">Add to Cart</button>
+                                    <button type="button" class="btn btn-outline-ojaya btn-sm" data-product="Yam" data-price="900" data-unit="tuber" data-image="assets/produce-yam.jpg" data-category="Tubers">Add to Cart</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Card 3 -->
-                    <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="col-12 col-sm-6 col-lg-4" data-produce-card data-category="Vegetables">
                         <div class="card h-100" data-aos="flip-left" data-aos-delay="200">
                             <img src="assets/produce-pepper.jpg" class="card-img-top" alt="Red chili peppers"
                                 loading="lazy" />
@@ -235,7 +243,7 @@
                                 <p class="text-secondary mb-2">A spicy kick, sustainably grown.</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <span class="price fw-bold text-ojaya">₦1,000/kg</span>
-                                    <button class="btn btn-outline-ojaya btn-sm">Add to Cart</button>
+                                    <button type="button" class="btn btn-outline-ojaya btn-sm" data-product="Peppers" data-price="1000" data-unit="kg" data-image="assets/produce-pepper.jpg" data-category="Vegetables">Add to Cart</button>
                                 </div>
                             </div>
                         </div>
@@ -483,10 +491,8 @@
             easing: 'ease-out-cubic'
         });
     </script>
+    <!-- Marketplace Cart Module -->
+    <script src="assets/js/marketplace.js"></script>
 </body>
-<!-- Bootstrap JS Bundle (for navbar collapse, carousel, accordion, tabs if used on other pages) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
 
 </html>
