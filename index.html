@@ -63,7 +63,7 @@
                             <a class="btn btn-ojaya btn-sm" href="signup.html">Get Started</a>
                         </div>
                         <div class="nav-item">
-                            <a class="btn btn-outline-ojaya btn-sm" href="login.html">Login</a>
+                            <a class="btn btn-brown btn-sm" href="login.html">Login</a>
                         </div>
                     </div>
                 </div>
@@ -203,53 +203,7 @@
                     <p class="overline text-uppercase fw-semibold text-ojaya mb-2" data-aos="fade-down">Local Produce</p>
                     <h3 class="h1 fw-bold" data-aos="fade-up">Fresh picks at considerate prices</h3>
                 </div>
-                <div class="row g-4">
-                    <!-- Card 1 -->
-                    <div class="col-12 col-sm-6 col-lg-4" data-produce-card data-category="Vegetables">
-                        <div class="card h-100" data-aos="flip-left" data-aos-delay="0">
-                            <img src="assets/produce-tomatoes.jpg" class="card-img-top" alt="Basket of ripe tomatoes"
-                                loading="lazy" />
-                            <div class="card-body">
-                                <h5 class="card-title">Tomatoes</h5>
-                                <p class="text-secondary mb-2">Locally grown, juicy and ripe.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="price fw-bold text-ojaya">₦1,200/kg</span>
-                                    <button type="button" class="btn btn-outline-ojaya btn-sm" data-product="Tomatoes" data-price="1200" data-unit="kg" data-image="assets/produce-tomatoes.jpg" data-category="Vegetables">Add to Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card 2 -->
-                    <div class="col-12 col-sm-6 col-lg-4" data-produce-card data-category="Tubers">
-                        <div class="card h-100" data-aos="flip-left" data-aos-delay="100">
-                            <img src="assets/produce-yam.jpg" class="card-img-top" alt="Fresh yams" loading="lazy" />
-                            <div class="card-body">
-                                <h5 class="card-title">Yam</h5>
-                                <p class="text-secondary mb-2">Rich, starchy, and satisfying.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="price fw-bold text-ojaya">₦900/tuber</span>
-                                    <button type="button" class="btn btn-outline-ojaya btn-sm" data-product="Yam" data-price="900" data-unit="tuber" data-image="assets/produce-yam.jpg" data-category="Tubers">Add to Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Card 3 -->
-                    <div class="col-12 col-sm-6 col-lg-4" data-produce-card data-category="Vegetables">
-                        <div class="card h-100" data-aos="flip-left" data-aos-delay="200">
-                            <img src="assets/produce-pepper.jpg" class="card-img-top" alt="Red chili peppers"
-                                loading="lazy" />
-                            <div class="card-body">
-                                <h5 class="card-title">Peppers</h5>
-                                <p class="text-secondary mb-2">A spicy kick, sustainably grown.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="price fw-bold text-ojaya">₦1,000/kg</span>
-                                    <button type="button" class="btn btn-outline-ojaya btn-sm" data-product="Peppers" data-price="1000" data-unit="kg" data-image="assets/produce-pepper.jpg" data-category="Vegetables">Add to Cart</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Add more cards as needed -->
-                </div>
+                <div id="homeProductGrid" class="row g-4" aria-live="polite"></div>
             </div>
         </section>
 
@@ -293,60 +247,46 @@
             </div>
         </section>
 
-        <!-- Reviews (Bootstrap Carousel) -->
+        <!-- Reviews -->
         <section id="reviews" class="py-5">
             <div class="container">
                 <div class="text-center mb-5">
                     <p class="overline text-uppercase fw-semibold text-ojaya mb-2">Reviews</p>
                     <h3 class="h1 fw-bold">Loved by farmers and consumers</h3>
                 </div>
-                <div id="reviewsCarousel" class="carousel slide reveal-load" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="review-card mx-auto">
-                                <div class="stars mb-2 text-ojaya" aria-hidden="true">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-half"></i>
-                                </div>
-                                <blockquote class="mb-2">FarmKonnect helped me sell produce faster with better margins. I
-                                    feel seen and supported.</blockquote>
-                                <div class="small text-secondary">— Adebayo, Farmer (Ibadan)</div>
-                            </div>
+                <div class="review-marquee reveal-load" aria-label="Customer reviews">
+                    <div class="review-track">
+                        <article class="review-card">
+                            <div class="stars mb-2 text-ojaya" aria-hidden="true"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
+                            <blockquote class="mb-2">FarmKonnect helped me sell produce faster with better margins. I feel seen and supported.</blockquote>
+                            <div class="small text-secondary">— Adebayo, Farmer (Ibadan)</div>
+                        </article>
+                        <article class="review-card">
+                            <div class="stars mb-2 text-ojaya" aria-hidden="true"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                            <blockquote class="mb-2">The freshness is unmatched and prices are fair. I love supporting local farmers.</blockquote>
+                            <div class="small text-secondary">— Ada, Consumer (Lagos)</div>
+                        </article>
+                        <article class="review-card">
+                            <div class="stars mb-2 text-ojaya" aria-hidden="true"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i></div>
+                            <blockquote class="mb-2">Clean design, easy ordering, and on-time delivery. Highly recommend FarmKonnect.</blockquote>
+                            <div class="small text-secondary">— Kunle, Consumer (Abuja)</div>
+                        </article>
+                        <div class="review-card" aria-hidden="true">
+                            <div class="stars mb-2 text-ojaya"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
+                            <blockquote class="mb-2">FarmKonnect helped me sell produce faster with better margins. I feel seen and supported.</blockquote>
+                            <div class="small text-secondary">— Adebayo, Farmer (Ibadan)</div>
                         </div>
-                        <div class="carousel-item">
-                            <div class="review-card mx-auto">
-                                <div class="stars mb-2 text-ojaya" aria-hidden="true">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i>
-                                </div>
-                                <blockquote class="mb-2">The freshness is unmatched and prices are fair. I love
-                                    supporting local farmers.</blockquote>
-                                <div class="small text-secondary">— Ada, Consumer (Lagos)</div>
-                            </div>
+                        <div class="review-card" aria-hidden="true">
+                            <div class="stars mb-2 text-ojaya"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                            <blockquote class="mb-2">The freshness is unmatched and prices are fair. I love supporting local farmers.</blockquote>
+                            <div class="small text-secondary">— Ada, Consumer (Lagos)</div>
                         </div>
-                        <div class="carousel-item">
-                            <div class="review-card mx-auto">
-                                <div class="stars mb-2 text-ojaya" aria-hidden="true">
-                                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                        class="bi bi-star"></i>
-                                </div>
-                                <blockquote class="mb-2">Clean design, easy ordering, and on-time delivery. Highly
-                                    recommend FarmKonnect.</blockquote>
-                                <div class="small text-secondary">— Kunle, Consumer (Abuja)</div>
-                            </div>
+                        <div class="review-card" aria-hidden="true">
+                            <div class="stars mb-2 text-ojaya"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i></div>
+                            <blockquote class="mb-2">Clean design, easy ordering, and on-time delivery. Highly recommend FarmKonnect.</blockquote>
+                            <div class="small text-secondary">— Kunle, Consumer (Abuja)</div>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#reviewsCarousel"
-                        data-bs-slide="prev" aria-label="Previous review">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#reviewsCarousel"
-                        data-bs-slide="next" aria-label="Next review">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    </button>
                 </div>
             </div>
         </section>
@@ -391,11 +331,17 @@
                     <p class="overline text-uppercase fw-semibold text-ojaya mb-2" data-aos="fade-down">Our Partners</p>
                     <h3 class="h1 fw-bold" data-aos="fade-up">Proudly collaborating with communities</h3>
                 </div>
-                <div class="row g-4 align-items-center justify-content-center">
-                    <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="0"><img src="assets/partner1.png" class="img-fluid opacity-75" alt="Partner 1" loading="lazy"></div>
-                    <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="100"><img src="assets/partner2.png" class="img-fluid opacity-75" alt="Partner 2" loading="lazy"></div>
-                    <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="200"><img src="assets/partner3.png" class="img-fluid opacity-75" alt="Partner 3" loading="lazy"></div>
-                    <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="300"><img src="assets/partner4.png" class="img-fluid opacity-75" alt="Partner 4" loading="lazy"></div>
+                <div class="partner-marquee" aria-label="Our partners">
+                    <div class="partner-track">
+                        <div class="partner-item"><img src="assets/partner1.png" class="img-fluid" alt="Partner 1" loading="lazy"></div>
+                        <div class="partner-item"><img src="assets/partner2.png" class="img-fluid" alt="Partner 2" loading="lazy"></div>
+                        <div class="partner-item"><img src="assets/partner3.png" class="img-fluid" alt="Partner 3" loading="lazy"></div>
+                        <div class="partner-item partner-paystack"><img src="assets/partner4.png" class="img-fluid" alt="Paystack" loading="lazy"></div>
+                        <div class="partner-item" aria-hidden="true"><img src="assets/partner1.png" class="img-fluid" alt="" loading="lazy"></div>
+                        <div class="partner-item" aria-hidden="true"><img src="assets/partner2.png" class="img-fluid" alt="" loading="lazy"></div>
+                        <div class="partner-item" aria-hidden="true"><img src="assets/partner3.png" class="img-fluid" alt="" loading="lazy"></div>
+                        <div class="partner-item partner-paystack" aria-hidden="true"><img src="assets/partner4.png" class="img-fluid" alt="" loading="lazy"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -491,6 +437,7 @@
             easing: 'ease-out-cubic'
         });
     </script>
+    <script src="assets/js/auth.js"></script>
     <!-- Marketplace Cart Module -->
     <script src="assets/js/marketplace.js"></script>
 </body>

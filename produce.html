@@ -21,7 +21,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="primaryNav">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <ul class="navbar-nav site-nav-links mb-2 mb-lg-0 align-items-lg-center">
             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="produce.html">Produce</a></li>
@@ -35,7 +35,7 @@
               </button>
             </li>
             <li class="nav-item me-2"><a class="btn btn-ojaya btn-sm" href="signup.html">Get Started</a></li>
-            <li class="nav-item"><a class="btn btn-outline-ojaya btn-sm" href="login.html">Login</a></li>
+            <li class="nav-item"><a class="btn btn-brown btn-sm" href="login.html">Login</a></li>
           </ul>
         </div>
       </div>
@@ -69,48 +69,7 @@
             </select>
           </div>
         </div>
-        <div class="row g-4">
-          <!-- Card samples -->
-          <div class="col-12 col-sm-6 col-lg-4" data-produce-card data-category="Vegetables">
-            <div class="card h-100">
-              <img src="assets/produce-tomatoes.jpg" class="card-img-top" alt="Basket of ripe tomatoes" loading="lazy" />
-              <div class="card-body">
-                <h5 class="card-title">Tomatoes</h5>
-                <p class="text-secondary mb-2">Locally grown, juicy and ripe.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="price fw-bold text-ojaya">₦1,200/kg</span>
-                  <button type="button" class="btn btn-outline-ojaya btn-sm" data-product="Tomatoes" data-price="1200" data-unit="kg" data-image="assets/produce-tomatoes.jpg" data-category="Vegetables">Add to Cart</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-4" data-produce-card data-category="Tubers">
-            <div class="card h-100">
-              <img src="assets/produce-yam.jpg" class="card-img-top" alt="Fresh yams" loading="lazy" />
-              <div class="card-body">
-                <h5 class="card-title">Yam</h5>
-                <p class="text-secondary mb-2">Rich, starchy, and satisfying.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="price fw-bold text-ojaya">₦900/tuber</span>
-                  <button type="button" class="btn btn-outline-ojaya btn-sm" data-product="Yam" data-price="900" data-unit="tuber" data-image="assets/produce-yam.jpg" data-category="Tubers">Add to Cart</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-4" data-produce-card data-category="Vegetables">
-            <div class="card h-100">
-              <img src="assets/produce-pepper.jpg" class="card-img-top" alt="Red chili peppers" loading="lazy" />
-              <div class="card-body">
-                <h5 class="card-title">Peppers</h5>
-                <p class="text-secondary mb-2">A spicy kick, sustainably grown.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="price fw-bold text-ojaya">₦1,000/kg</span>
-                  <button type="button" class="btn btn-outline-ojaya btn-sm" data-product="Peppers" data-price="1000" data-unit="kg" data-image="assets/produce-pepper.jpg" data-category="Vegetables">Add to Cart</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div id="produceProductGrid" class="row g-4" aria-live="polite"></div>
       </div>
     </section>
     <section class="py-5 section-cream">
@@ -119,47 +78,7 @@
           <p class="overline text-uppercase fw-semibold text-ojaya mb-2" data-aos="fade-down">Seasonal Picks</p>
           <h3 class="h1 fw-bold" data-aos="fade-up">Fresh right now</h3>
         </div>
-        <div class="row g-4">
-          <div class="col-12 col-sm-6 col-lg-4" data-produce-card data-category="Tubers">
-            <div class="card h-100" data-aos="zoom-in" data-aos-delay="0">
-              <img src="assets/produce-plantain.jpg" class="card-img-top" alt="Green plantains" loading="lazy" />
-              <div class="card-body">
-                <h5 class="card-title">Plantain</h5>
-                <p class="text-secondary mb-2">Perfect for boiling, frying, or roasting.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="price fw-bold text-ojaya">₦700/bunch</span>
-                  <button type="button" class="btn btn-outline-ojaya btn-sm" data-product="Plantain" data-price="700" data-unit="bunch" data-image="assets/produce-plantain.jpg" data-category="Tubers">Add to Cart</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-4" data-produce-card data-category="Greens">
-            <div class="card h-100" data-aos="zoom-in" data-aos-delay="100">
-              <img src="assets/produce-spinach.jpg" class="card-img-top" alt="Fresh spinach leaves" loading="lazy" />
-              <div class="card-body">
-                <h5 class="card-title">Spinach</h5>
-                <p class="text-secondary mb-2">Leafy greens packed with nutrients.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="price fw-bold text-ojaya">₦500/bundle</span>
-                  <button type="button" class="btn btn-outline-ojaya btn-sm" data-product="Spinach" data-price="500" data-unit="bundle" data-image="assets/produce-spinach.jpg" data-category="Greens">Add to Cart</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-4" data-produce-card data-category="Vegetables">
-            <div class="card h-100" data-aos="zoom-in" data-aos-delay="200">
-              <img src="assets/produce-carrots.jpg" class="card-img-top" alt="Carrots on a wooden table" loading="lazy" />
-              <div class="card-body">
-                <h5 class="card-title">Carrots</h5>
-                <p class="text-secondary mb-2">Crunchy and sweet, great for everything.</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <span class="price fw-bold text-ojaya">₦1,100/kg</span>
-                  <button type="button" class="btn btn-outline-ojaya btn-sm" data-product="Carrots" data-price="1100" data-unit="kg" data-image="assets/produce-carrots.jpg" data-category="Vegetables">Add to Cart</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div id="seasonalProductGrid" class="row g-4" aria-live="polite"></div>
       </div>
     </section>
   </main>
@@ -243,6 +162,7 @@
       easing: 'ease-out-cubic'
     });
   </script>
+  <script src="assets/js/auth.js"></script>
   <!-- Marketplace Cart Module -->
   <script src="assets/js/marketplace.js"></script>
 </body>

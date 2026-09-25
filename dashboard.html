@@ -1,311 +1,46 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self' https://cdn.jsdelivr.net https://unpkg.com; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://unpkg.com; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://unpkg.com; font-src 'self' https://cdn.jsdelivr.net data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdn.jsdelivr.net https://unpkg.com; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://unpkg.com; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://unpkg.com; font-src 'self' https://cdn.jsdelivr.net data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests" />
     <meta name="referrer" content="no-referrer" />
     <title>Dashboard - FarmKonnect</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body data-page="dashboard">
     <header>
         <nav class="navbar navbar-expand-lg" aria-label="Primary">
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-                    <img src="assets/logo.png" alt="FarmKonnect logo" width="36" height="36"
-                        class="rounded-circle object-fit-cover" />
+                    <img src="assets/logo.png" alt="FarmKonnect logo" width="36" height="36" class="rounded-circle object-fit-cover" />
                     <span class="fw-bold brand-text">FarmKonnect</span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNav"
-                    aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNav" aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="primaryNav">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-2">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="produce.html">Produce</a></li>
-                        <li class="nav-item"><a class="nav-link" href="features.html">Features</a></li>
-                        <li class="nav-item"><button type="button" class="btn btn-outline-ojaya btn-sm" data-action="logout">Logout</button></li>
+                    <ul class="navbar-nav site-nav-links mb-2 mb-lg-0 align-items-lg-center">
+                        <li class="nav-item"><button type="button" class="btn btn-gold btn-sm" data-action="logout">Logout</button></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-
-    <main>
+    <main id="dashboardApp">
         <section class="py-5 section-light-green dashboard-shell">
             <div class="container">
-                <div class="dashboard-hero card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-4">
-                    <div class="row g-4 align-items-center">
-                        <div class="col-lg-8">
-                            <p class="text-uppercase text-secondary fw-semibold small mb-2">Marketplace Command Center</p>
-                            <h1 class="display-6 fw-bold mb-2">Welcome back, <span id="dashboardUserName">User</span></h1>
-                            <p class="text-secondary mb-3">Run your daily operations like a real marketplace team: manage products, monitor orders, track buyers, and improve growth performance.</p>
-                            <div class="d-flex flex-wrap gap-2">
-                                <a href="produce.html" class="btn btn-ojaya"><i class="bi bi-shop me-2"></i>Manage Storefront</a>
-                                <button type="button" class="btn btn-outline-ojaya"><i class="bi bi-plus-circle me-2"></i>Add Product</button>
-                                <button type="button" class="btn btn-gold"><i class="bi bi-megaphone me-2"></i>Launch Campaign</button>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="dashboard-search p-3 rounded-3 border bg-white">
-                                <label for="dashboardSearch" class="small text-secondary mb-2 d-block">Quick Search</label>
-                                <div class="input-group">
-                                    <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
-                                    <input id="dashboardSearch" type="search" class="form-control" placeholder="Orders, customers, catfish, tomatoes..." />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row g-3 mb-4">
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="metric-card metric-green p-3 rounded-4 h-100">
-                            <p class="small text-secondary mb-1">Revenue Today</p>
-                            <h3 class="fw-bold mb-1">₦482,100</h3>
-                            <span class="small text-success"><i class="bi bi-arrow-up"></i> +12.4% vs yesterday</span>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="metric-card metric-gold p-3 rounded-4 h-100">
-                            <p class="small text-secondary mb-1">Pending Orders</p>
-                            <h3 class="fw-bold mb-1">37</h3>
-                            <span class="small text-danger"><i class="bi bi-exclamation-circle"></i> 8 need dispatch in 2 hrs</span>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="metric-card p-3 rounded-4 h-100">
-                            <p class="small text-secondary mb-1">Active Listings</p>
-                            <h3 class="fw-bold mb-1">214</h3>
-                            <span class="small text-secondary">18 low-stock products</span>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3">
-                        <div class="metric-card p-3 rounded-4 h-100">
-                            <p class="small text-secondary mb-1">Fulfillment SLA</p>
-                            <h3 class="fw-bold mb-1">96.1%</h3>
-                            <span class="small text-success">Healthy operations</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card border-0 shadow-sm rounded-4 p-3 p-md-4 mb-4">
-                    <div class="d-flex flex-wrap gap-2 align-items-center">
-                        <span class="small fw-semibold text-secondary me-2">Hot Categories:</span>
-                        <button class="btn btn-sm btn-outline-ojaya" type="button">Vegetables</button>
-                        <button class="btn btn-sm btn-outline-ojaya" type="button">Fruits</button>
-                        <button class="btn btn-sm btn-outline-ojaya" type="button">Catfish</button>
-                        <button class="btn btn-sm btn-outline-ojaya" type="button">Poultry</button>
-                        <button class="btn btn-sm btn-outline-ojaya" type="button">Tubers</button>
-                        <button class="btn btn-sm btn-outline-ojaya" type="button">Dairy</button>
-                    </div>
-                </div>
-
-                <div class="row g-4">
-                    <div class="col-xl-8">
-                        <div class="card border-0 shadow-sm rounded-4 p-3 p-md-4 mb-4">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h2 class="h5 fw-bold mb-0">Live Order Queue</h2>
-                                <a href="#" class="small text-ojaya fw-semibold">View all</a>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table align-middle dashboard-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Order ID</th>
-                                            <th>Customer</th>
-                                            <th>Category</th>
-                                            <th>Amount</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>#FK-1071</td>
-                                            <td>Adunni Kareem</td>
-                                            <td>Catfish</td>
-                                            <td>₦18,300</td>
-                                            <td><span class="status-pill warning">Packing</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>#FK-1072</td>
-                                            <td>Martin Eze</td>
-                                            <td>Tomatoes</td>
-                                            <td>₦7,800</td>
-                                            <td><span class="status-pill info">In Transit</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>#FK-1073</td>
-                                            <td>Ruth Balogun</td>
-                                            <td>Yam</td>
-                                            <td>₦13,500</td>
-                                            <td><span class="status-pill success">Delivered</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>#FK-1074</td>
-                                            <td>Ibrahim Jamiu</td>
-                                            <td>Pepper</td>
-                                            <td>₦5,400</td>
-                                            <td><span class="status-pill danger">Delayed</span></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                        <div class="card border-0 shadow-sm rounded-4 p-3 p-md-4 mb-4">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h2 class="h5 fw-bold mb-0">Catalog Health</h2>
-                                <button class="btn btn-sm btn-outline-ojaya" type="button">Bulk update</button>
-                            </div>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="catalog-item p-3 rounded-3 border h-100">
-                                        <p class="fw-semibold mb-1">Catfish (Premium 2kg)</p>
-                                        <p class="small text-secondary mb-2">High demand this week</p>
-                                        <div class="stock-track mb-2"><span class="stock-fill" style="width: 32%;"></span></div>
-                                        <p class="small mb-0 text-danger">Stock left: 32 units</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="catalog-item p-3 rounded-3 border h-100">
-                                        <p class="fw-semibold mb-1">Fresh Tomatoes (Crate)</p>
-                                        <p class="small text-secondary mb-2">Stable sell-through</p>
-                                        <div class="stock-track mb-2"><span class="stock-fill" style="width: 68%;"></span></div>
-                                        <p class="small mb-0 text-success">Stock healthy: 174 units</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="catalog-item p-3 rounded-3 border h-100">
-                                        <p class="fw-semibold mb-1">Organic Pepper Mix</p>
-                                        <p class="small text-secondary mb-2">Campaign-ready product</p>
-                                        <div class="stock-track mb-2"><span class="stock-fill" style="width: 51%;"></span></div>
-                                        <p class="small mb-0 text-secondary">Stock moderate: 86 units</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="catalog-item p-3 rounded-3 border h-100">
-                                        <p class="fw-semibold mb-1">White Yam (Bundle)</p>
-                                        <p class="small text-secondary mb-2">Frequent repeat orders</p>
-                                        <div class="stock-track mb-2"><span class="stock-fill" style="width: 42%;"></span></div>
-                                        <p class="small mb-0 text-warning">Reorder soon: 57 units</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card border-0 shadow-sm rounded-4 p-3 p-md-4">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <h2 class="h5 fw-bold mb-0">Buyer Insights</h2>
-                                <span class="small text-secondary">Last 7 days</span>
-                            </div>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="insight-card p-3 rounded-3 h-100">
-                                        <p class="small text-secondary mb-2">Top Search Terms</p>
-                                        <ul class="list-unstyled small mb-0">
-                                            <li class="d-flex justify-content-between py-1 border-bottom"><span>catfish</span><span class="fw-semibold">3,241</span></li>
-                                            <li class="d-flex justify-content-between py-1 border-bottom"><span>fresh tomatoes</span><span class="fw-semibold">2,882</span></li>
-                                            <li class="d-flex justify-content-between py-1 border-bottom"><span>yam tubers</span><span class="fw-semibold">1,997</span></li>
-                                            <li class="d-flex justify-content-between py-1"><span>pepper mix</span><span class="fw-semibold">1,534</span></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="insight-card p-3 rounded-3 h-100">
-                                        <p class="small text-secondary mb-2">Traffic by Channel</p>
-                                        <div class="mb-2">
-                                            <div class="d-flex justify-content-between small"><span>Organic</span><span>43%</span></div>
-                                            <div class="stock-track"><span class="stock-fill" style="width: 43%;"></span></div>
-                                        </div>
-                                        <div class="mb-2">
-                                            <div class="d-flex justify-content-between small"><span>Referral</span><span>27%</span></div>
-                                            <div class="stock-track"><span class="stock-fill" style="width: 27%;"></span></div>
-                                        </div>
-                                        <div class="mb-2">
-                                            <div class="d-flex justify-content-between small"><span>Ads</span><span>18%</span></div>
-                                            <div class="stock-track"><span class="stock-fill" style="width: 18%;"></span></div>
-                                        </div>
-                                        <div>
-                                            <div class="d-flex justify-content-between small"><span>Direct</span><span>12%</span></div>
-                                            <div class="stock-track"><span class="stock-fill" style="width: 12%;"></span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-4">
-                        <div class="card border-0 shadow-sm rounded-4 p-3 p-md-4 mb-4">
-                            <h2 class="h6 fw-bold mb-3">Account Profile</h2>
-                            <div class="p-3 rounded-3 border mb-2">
-                                <p class="small text-secondary mb-1">Portal</p>
-                                <p id="dashboardUserRole" class="fw-semibold mb-0">-</p>
-                            </div>
-                            <div class="p-3 rounded-3 border mb-3">
-                                <p class="small text-secondary mb-1">Email</p>
-                                <p id="dashboardUserEmail" class="fw-semibold mb-0">-</p>
-                            </div>
-                            <button type="button" class="btn btn-outline-ojaya w-100" data-action="logout">Sign out</button>
-                        </div>
-
-                        <div class="card border-0 shadow-sm rounded-4 p-3 p-md-4 mb-4">
-                            <h2 class="h6 fw-bold mb-3">Wallet & Payout</h2>
-                            <p class="small text-secondary mb-1">Available Balance</p>
-                            <h3 class="fw-bold mb-3">₦1,284,600</h3>
-                            <div class="d-grid gap-2">
-                                <button type="button" class="btn btn-ojaya">Request Settlement</button>
-                                <button type="button" class="btn btn-outline-ojaya">Download Statement</button>
-                            </div>
-                        </div>
-
-                        <div class="card border-0 shadow-sm rounded-4 p-3 p-md-4 mb-4 security-panel">
-                            <h2 class="h6 fw-bold mb-3">Security Center</h2>
-                            <ul class="list-unstyled small mb-3">
-                                <li class="d-flex justify-content-between py-1 border-bottom"><span>Last login</span><span>Today, 9:24 AM</span></li>
-                                <li class="d-flex justify-content-between py-1 border-bottom"><span>Failed attempts</span><span>0</span></li>
-                                <li class="d-flex justify-content-between py-1"><span>Session status</span><span class="text-success">Protected</span></li>
-                            </ul>
-                            <button type="button" class="btn btn-outline-ojaya w-100">Manage Security</button>
-                        </div>
-
-                        <div class="card border-0 shadow-sm rounded-4 p-3 p-md-4">
-                            <h2 class="h6 fw-bold mb-3">Today's Task List</h2>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" value="" id="taskOne" checked>
-                                <label class="form-check-label" for="taskOne">Approve 12 new product uploads</label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" value="" id="taskTwo">
-                                <label class="form-check-label" for="taskTwo">Restock catfish inventory</label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" value="" id="taskThree">
-                                <label class="form-check-label" for="taskThree">Resolve delayed order tickets</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="taskFour">
-                                <label class="form-check-label" for="taskFour">Review ad spend performance</label>
-                            </div>
-                        </div>
-                    </div>
+                <div class="text-center py-5" data-dashboard-loading>
+                    <div class="spinner-border text-ojaya" role="status" aria-label="Loading dashboard"></div>
+                    <p class="text-secondary mt-3 mb-0">Loading your workspace...</p>
                 </div>
             </div>
         </section>
     </main>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="assets/js/auth.js"></script>
+    <script src="assets/js/marketplace.js"></script>
 </body>
-
 </html>

@@ -13,6 +13,10 @@
         maxPasswordLength: 128,
         maxNameLength: 100,
         maxFarmTypeLength: 80,
+        maxPhoneLength: 20,
+        maxBankNameLength: 80,
+        maxAccountNameLength: 100,
+        accountNumberLength: 10,
         lockAfterFailures: 5,
         failureWindowMs: 10 * 60 * 1000,
         lockDurationMs: 15 * 60 * 1000,
@@ -286,6 +290,10 @@
         const role = options.role === 'farmer' ? 'farmer' : 'consumer';
         const fullName = sanitizeText(options.fullName, AUTH_POLICY.maxNameLength);
         const farmType = sanitizeText(options.farmType, AUTH_POLICY.maxFarmTypeLength);
+        const phone = sanitizeText(options.phone, AUTH_POLICY.maxPhoneLength);
+        const bankName = sanitizeText(options.bankName, AUTH_POLICY.maxBankNameLength);
+        const accountName = sanitizeText(options.accountName, AUTH_POLICY.maxAccountNameLength);
+        const accountNumber = String(options.accountNumber || '').replace(/\D/g, '').slice(0, AUTH_POLICY.accountNumberLength);
         const email = normalizeEmail(options.email);
         const password = String(options.password || '');
 
@@ -323,6 +331,9 @@
             role: role,
             fullName: fullName,
             farmType: role === 'farmer' ? farmType : '',
+            phone: role === 'farmer' ? phone : '',
+            payout: role === 'farmer' ? { bankName: bankName, accountName: accountName, accountNumber: accountNumber } : null,
+            verificationStatus: role === 'farmer' ? 'pending' : 'not_required',
             email: email,
             passwordHash: hashBase64,
             passwordSalt: saltBase64,
@@ -336,6 +347,71 @@
         saveDatabase(db);
 
         return getPublicUser(user);
+    }
+
+    function completeFarmerVerification(session, options) {
+        if (!session || session.role !== 'farmer') {
+            throw new Error('Only farmer accounts can complete verification.');
+        }
+
+        const phone = sanitizeText(options.phone, AUTH_POLICY.maxPhoneLength);
+        const bankName = sanitizeText(options.bankName, AUTH_POLICY.maxBankNameLength);
+        const accountName = sanitizeText(options.accountName, AUTH_POLICY.maxAccountNameLength);
+        const accountNumber = String(options.accountNumber || '').replace(/\D/g, '').slice(0, AUTH_POLICY.accountNumberLength);
+
+        if (!phone || !bankName || !accountName || accountNumber.length !== AUTH_POLICY.accountNumberLength) {
+            throw new Error('Provide a phone number and valid 10-digit bank payout details.');
+        }
+
+        const db = getDatabase();
+        const user = db.users.find(function (entry) {
+            return entry.id === session.userId && entry.role === 'farmer';
+        });
+
+        if (!user) {
+            throw new Error('Farmer account could not be found.');
+        }
+
+        user.phone = phone;
+        user.payout = { bankName: bankName, accountName: accountName, accountNumber: accountNumber };
+        user.verificationStatus = 'submitted';
+        user.updatedAt = nowIso();
+        pushAuditLog(db, 'FARMER_VERIFICATION_SUBMITTED', { userId: user.id });
+        saveDatabase(db);
+        return getPublicUser(user);
+    }
+
+    function getCurrentUserProfile() {
+        const session = getCurrentSession();
+        if (!session) return null;
+        const db = getDatabase();
+        const user = db.users.find(function (entry) { return entry.id === session.userId; });
+        if (!user) return null;
+        return {
+            id: user.id,
+            role: user.role,
+            fullName: user.fullName,
+            phone: user.phone || '',
+            payout: user.payout || null,
+            verificationStatus: user.verificationStatus || 'pending'
+        };
+    }
+
+    function getFarmerPayoutProfiles() {
+        const db = getDatabase();
+        return db.users.filter(function (user) {
+            return user.role === 'farmer' && user.payout;
+        }).map(function (user) {
+            return {
+                id: user.id,
+                fullName: user.fullName,
+                email: user.email,
+                phone: user.phone || '',
+                payout: user.payout,
+                verificationStatus: user.verificationStatus || 'pending',
+                createdAt: user.createdAt
+            };
+        });
     }
 
     function clearSession() {
@@ -499,6 +575,10 @@
                     role: config.role,
                     fullName: document.getElementById(config.nameId).value,
                     farmType: config.farmTypeId ? document.getElementById(config.farmTypeId).value : '',
+                    phone: config.phoneId ? document.getElementById(config.phoneId).value : '',
+                    bankName: config.bankNameId ? document.getElementById(config.bankNameId).value : '',
+                    accountName: config.accountNameId ? document.getElementById(config.accountNameId).value : '',
+                    accountNumber: config.accountNumberId ? document.getElementById(config.accountNumberId).value : '',
                     email: document.getElementById(config.emailId).value,
                     password: document.getElementById(config.passwordId).value,
                     acceptTerms: config.termsId ? document.getElementById(config.termsId).checked : true
@@ -541,8 +621,18 @@
                     rememberMe: document.getElementById(config.rememberId).checked
                 });
 
-                setAlert(alertElement, 'success', 'Login successful. Redirecting to dashboard...');
+                setAlert(alertElement, 'success', 'Login successful. Continuing...');
                 window.setTimeout(function () {
+                    const pendingAction = window.localStorage.getItem('farmkonnect_pending_marketplace_action');
+                    if (config.role === 'consumer' && pendingAction) {
+                        try {
+                            window.location.href = 'dashboard.html';
+                            return;
+                        } catch (error) {
+                            window.localStorage.removeItem('farmkonnect_pending_marketplace_action');
+                        }
+                    }
+
                     window.location.href = 'dashboard.html';
                 }, 700);
             } catch (error) {
@@ -654,6 +744,9 @@
     window.FarmKonnectAuth = {
         getCurrentSession: getCurrentSession,
         signOut: signOut,
+        completeFarmerVerification: completeFarmerVerification,
+        getCurrentUserProfile: getCurrentUserProfile,
+        getFarmerPayoutProfiles: getFarmerPayoutProfiles,
         resetLocalDatabase: function () {
             getStorage('local').removeItem(STORAGE_KEYS.database);
             getStorage('local').removeItem(STORAGE_KEYS.loginAttempts);
