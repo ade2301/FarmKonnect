@@ -643,13 +643,13 @@ header {
 
 /* Animated underline for CTAs */
 .btn-ojaya,
-.btn-gold {
+.btn-gold:not(.cart-badge) {
     position: relative;
     overflow: hidden;
 }
 
 .btn-ojaya::before,
-.btn-gold::before {
+.btn-gold:not(.cart-badge)::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -661,7 +661,7 @@ header {
 }
 
 .btn-ojaya:hover::before,
-.btn-gold:hover::before {
+.btn-gold:not(.cart-badge):hover::before {
     left: 100%;
 }
 

@@ -48,7 +48,22 @@
 
   function getCatalog() {
     const catalog = read(CATALOG_KEY, null);
-    if (catalog && Array.isArray(catalog.suppliers) && Array.isArray(catalog.products)) return catalog;
+    if (catalog && Array.isArray(catalog.suppliers) && Array.isArray(catalog.products)) {
+      let changed = false;
+      if (!catalog.suppliers.some(function (supplier) { return supplier.id === 'admin-supplier'; })) {
+        catalog.suppliers.push(initialCatalog.suppliers[0]);
+        changed = true;
+      }
+      catalog.products.forEach(function (product) {
+        if (product.supplierId === 'admin-supplier') {
+          if (!Number.isInteger(product.stock)) { product.stock = 100; changed = true; }
+          if (!product.approvalStatus) { product.approvalStatus = 'approved'; changed = true; }
+          if (!Number.isFinite(product.originalPrice)) { product.originalPrice = product.price; changed = true; }
+        }
+      });
+      if (changed) save(CATALOG_KEY, catalog);
+      return catalog;
+    }
     save(CATALOG_KEY, initialCatalog);
     return initialCatalog;
   }
